@@ -13,7 +13,10 @@ const Dashboard = () => {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
         })
-        .then(res => setData(res.data))
+        .then(res => {
+            setData(res.data);
+            
+        })
         .catch( err => console.log(err))
         }, []);
 
@@ -23,7 +26,7 @@ const Dashboard = () => {
         setRedirect(true);
     }
     
-    if(!(localStorage.getItem('token'))){
+    if(redirect){
         return <Navigate to="/login" />
     }
 
@@ -57,7 +60,7 @@ const Dashboard = () => {
                         <h2>{profile.fullname}</h2>
                         <p>{profile.email}</p>
                         <p>{profile.mobile}</p>
-                        <Link to={`/profileind/${profile.fullname}/${profile.email}/${profile.skill}`} className='btn btn-primary'>View Profile</Link>
+                        <Link to={`/profileind/${profile.fullname}/${profile.email}/${profile._id}`} className='btn btn-primary'>View Profile</Link>
                     </div>
                     <ul>
                         {profile.skill.split(",").map(skill =>

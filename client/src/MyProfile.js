@@ -33,7 +33,7 @@ const MyProfile = () => {
         setRedirect(true);
     }
     
-    if(!(localStorage.getItem('token'))){
+    if(redirect){
         return <Navigate to="/login" />
     }
 
@@ -79,23 +79,7 @@ const MyProfile = () => {
                         }
                         
                     </div>
-                    <div className='repo bg-white p-1 my-1'>
-                        {}
-                        <div>
-                            <h4>Enter your reviews</h4>
-                            <form className='form' autoCapitalize='off'>
-                                <div className='form-group'>
-                                    <input 
-                                        type='text'
-                                        placeholder='Enter your rating out of 5'
-                                        name='rating'
-                                        required
-                                    />
-                                </div>
-                                <input type='submit' className='btn btn-primary' value="Add Rating"/>
-                            </form>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
         
