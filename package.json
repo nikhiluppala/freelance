@@ -12,13 +12,16 @@
   "author": "Nikhil Uppala",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.3.1"
+    "mongoose": "^8.3.1",
+    "react-router-dom": "^6.22.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0"
   }
